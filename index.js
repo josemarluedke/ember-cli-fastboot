@@ -114,7 +114,7 @@ module.exports = {
    * adds the `fastboot-config.json` file to the root.
    */
   postprocessTree: function(type, tree) {
-    if (type === 'all') {
+    if (process.env.SHOULD_BUILD_FASTBOOT && type === 'all') {
       var fastbootTree = this.buildFastBootTree();
 
       // Merge the package.json with the existing tree
