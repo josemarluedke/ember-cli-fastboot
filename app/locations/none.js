@@ -47,9 +47,8 @@ export default Ember.NoneLocation.extend({
       let response = get(this, '_response');
 
       if (isTransitioning && !isInitialPath) {
-        let protocol = get(this, '_request.protocol');
         let host = get(this, '_request.host');
-        let redirectURL = `${protocol}://${host}${path}`;
+        let redirectURL = `//${host}${path}`;
 
         response.statusCode = this.get('_redirectCode');
         response.headers.set('location', redirectURL);
