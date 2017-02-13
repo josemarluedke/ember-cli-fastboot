@@ -40,7 +40,7 @@ export default Ember.NoneLocation.extend({
         let rootURL = get(this, 'rootURL');
         rootURL = rootURL.substr(0, rootURL.length - 1);
         path = `${rootURL}${path}`;
-        let redirectURL = `${protocol}://${host}${path}`;
+        let redirectURL = `//${host}${path}`;
 
         response.statusCode = this.get('_redirectCode');
         response.headers.set('location', redirectURL);
