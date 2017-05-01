@@ -9,6 +9,10 @@ export default {
   name: 'error-handler',
 
   initialize: function(application) {
+    if (typeof FastBoot === 'undefined') {
+      return;
+    }
+
     if (!Ember.onerror) {
       // if no onerror handler is defined, define one for fastboot environments
       Ember.onerror = function(err) {
